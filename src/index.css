@@ -1,13 +1,100 @@
-body {
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Bebas Neue', cursive; */
+}
+.modal-open,
+.no-scroll {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.netflix-btn {
+  background-color:#e50914;
+  padding: 10px 15px;
+  color:white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.5s;
+  border-radius: 5px;
+  border:none;
+  outline: none;
+}
+.netflix-btn:hover {
+  background-color:#bd0811;
+}
+
+.swiper-slide {
+  width: auto !important;
+}
+
+.swiper , 
+.swiper-container {
+    overflow: visible !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+    font-size:25px !important;
+    color:#ffffffb3 !important; 
+}
+.card-hover {
+  position:absolute;
+  left:50%;
+  top:50%;
+  display:flex;
+  flex-direction:column;
+  width:200px;
+  z-index:50;
+  transform:translate(-50%,-50%) scale(0);
+  transition: 0.5s ease-in-out;
+}
+.backdrop:hover .card-hover {
+  transform:translate(-50%,-50%) scale(1.2);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0, .7);
+  opacity: 0;
+  z-index: -1;
+  transition: 0.4s opacity;
+}
+.poster .content {
+  opacity: 0;
+  transition: 0.4s;
+}
+.poster:hover {
+  transform: scale(1.2);
+  border: 2px solid white;
+}
+.poster:hover .overlay {
+  opacity: 1;
+  z-index: 20;
+}
+.poster:hover .content {
+    opacity: 1;
 }
