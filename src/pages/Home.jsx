@@ -45,14 +45,14 @@ const Home = () => {
                     {cardSelected?<DetailsModal/>:null}
                     {genresMovieList?.map((genre,indx) => {
                         // these 2 genres are +18 because I didn't display them :)
-                        // if(genre.name !== 'Documentary' && genre.name !== 'Romance' && indx < 4) {
-                        //     return <Genre type='movie' genreName={genre.name} genreId={genre.id} key={genre.id}/>
-                        // }
+                        if(genre.name !== 'Documentary' && genre.name !== 'Romance' && indx < 4) {
+                            return <Genre type='movie' genreName={genre.name} genreId={genre.id} key={genre.id}/>
+                        }
                     })}
                     {genresTVList?.map((genre,indx) => {
-                        // if(indx < 4) {
-                        //     return <Genre type='tv' genreName={genre.name} genreId={genre.id} key={genre.id}/>
-                        // }
+                        if(indx < 4) {
+                            return <Genre type='tv' genreName={genre.name} genreId={genre.id} key={genre.id}/>
+                        }
                     })}
                 </div>
                 <Footer/>
