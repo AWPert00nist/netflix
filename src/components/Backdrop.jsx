@@ -1,13 +1,11 @@
 import LazyLoad from "react-lazy-load";
 import Card from "./Card";
 import { memo } from "react";
+import { getImage} from "../utils/constants";
 
 const Backdrop = ({data,datatype}) => {
-    const getImage =(item)=> {
-        return (item?.backdrop_path!==null)? item?.backdrop_path:item?.poster_path;
-    }
     return ( 
-        <div className='backdrop relative'>
+        <div className='backdrop relative w-[300px] h-[200px] max-[500px]:w-[250px] max-[500px]:h-[150px]'>
             <LazyLoad offset={400}>
                 <img 
                 className='object-cover w-[300px] h-[200px] max-[500px]:w-[250px] max-[500px]:h-[150px]'

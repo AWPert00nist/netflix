@@ -26,7 +26,7 @@ const Poster = ({data,datatype}) => {
         }
     },[])
     return ( 
-        <div className='poster relative transition-[0.7s]'>
+        <div className='poster relative w-[250px] h-[350px] max-[500px]:w-[200px] max-[500px]:h-[300px] transition-[0.7s]'>
             <LazyLoad offset={400}>
                 <img 
                 className='object-cover w-[250px] h-[350px] max-[500px]:w-[200px] max-[500px]:h-[300px]'
