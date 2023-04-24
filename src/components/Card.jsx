@@ -1,13 +1,9 @@
-// import AddIcon from '@mui/icons-material/Add';
-// import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { getMovieTrailers, getTvTrailers,setCardSelected,setDialogOpen,setTrailerSelected } from '../Store/movieSlice';
 import { getGenreName, getImage, getName, getRandomNumber } from "../utils/constants";
 import { useNavigate } from 'react-router-dom';
-import LazyLoad from 'react-lazy-load';
 
 const Card = ({data,datatype}) => {
     const genresMovieList =useSelector(state => state.movie.genresMovieList);
@@ -39,13 +35,12 @@ const Card = ({data,datatype}) => {
     },[])
     return ( 
         <div className='card-hover w-[400px] h-max'>
-            <LazyLoad offset={400}>
-                <img 
-                clasName="h-[200px] w-full"
-                src={`https://image.tmdb.org/t/p/original/${data?getImage(data,'backrop'):null}`}  alt=''
-                onClick={()=> handleClickPlay(trailers[0]?.key)}
-                />
-            </LazyLoad>
+            <img
+            loading='lazy'
+            className="h-[120px] w-full"
+            src={`https://image.tmdb.org/t/p/original/${data?getImage(data,'backrop'):null}`}  alt=''
+            onClick={()=> handleClickPlay(trailers[0]?.key)}
+            />
             <div className="content pb-[20px] pt-[10px] px-[10px] bg-[#141414]">
                 <h1 className="text-white text-[15px] font-medium">
                     {data ? getName(data,datatype):null }
@@ -75,8 +70,8 @@ const Card = ({data,datatype}) => {
                         </button>
                     </div>
                     <button onClick={()=>handleClickMore(trailers[0]?.key,data,datatype)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                    <path fillRule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clipRule="evenodd" />
                     </svg>
                     </button>
                 </div>

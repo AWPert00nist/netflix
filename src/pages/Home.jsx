@@ -19,6 +19,7 @@ const Home = () => {
     const cardSelected =useSelector(state => state.movie.cardSelected)
     const dispatch =useDispatch();
     useEffect(() => {
+        bannerImageLoading?document.body.classList.add("no-scroll"):document.body.classList.remove("no-scroll");
         dispatch(getGenres('movie')).unwrap()
         .then((data)=> {
             dispatch(setGenresMovieList(data.genres));
@@ -27,8 +28,8 @@ const Home = () => {
         .then((data)=> {
             dispatch(setGenresTVList(data.genres));
         })
-    },[])
-    bannerImageLoading?document.body.classList.add("no-scroll"):document.body.classList.remove("no-scroll");
+    },[bannerImageLoading,dispatch])
+    
     return ( 
         <Fragment>
             {bannerImageLoading && <Loader type='page'/>}

@@ -20,9 +20,7 @@ const Banner = () => {
         dispatch(getTvTrailers(bannerMovie.id)).then((res) => {
             setBannerTrailer(res.payload?.results?.filter(item => item.type === "Trailer"))
         })
-        setTimeout(() => {
-            dispatch(setBannerImageLoading(false))
-        }, 1000);
+        dispatch(setBannerImageLoading(false))
     }
     else {
         dispatch(setBannerImageLoading(true))

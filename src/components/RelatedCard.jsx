@@ -1,13 +1,12 @@
-import LazyLoad from "react-lazy-load";
 import { getDate, getImage, getName, getOverView, getRandomNumber } from "../utils/constants";
-// import AddIcon from '@mui/icons-material/Add';
 
 const RelatedCard = ({data,datatype}) => {
     return ( 
         <div className='card-related'>
-            <LazyLoad offset={400}>
-                <img src={`https://image.tmdb.org/t/p/original/${data?getImage(data,datatype):null}`}  className='h-[150px] w-full object-cover'  alt=''/>
-            </LazyLoad>
+            <img
+            loading="lazy" 
+            src={`https://image.tmdb.org/t/p/original/${data?getImage(data,datatype):null}`}  
+            className='h-[150px] w-full object-cover'  alt=''/>
             <div className="content pb-[20px] pt-[10px] px-[10px]">
                 <h1 className="text-white text-[15px] font-medium">
                     {data ? getName(data):null }

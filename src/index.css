@@ -1,8 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 * {
   box-sizing: border-box;
@@ -44,19 +42,14 @@ a {
 .netflix-btn:hover {
   background-color:#bd0811;
 }
-
-.swiper-slide {
-  width: auto !important;
+.slick-list {
+  overflow:visible !important;
 }
-
-.swiper , 
-.swiper-container {
-    overflow: visible !important;
+.slick-arrow.slick-next:before {
+  content: "";
 }
-.swiper-button-prev,
-.swiper-button-next {
-    font-size:25px !important;
-    color:#ffffffb3 !important; 
+.slick-arrow.slick-prev:before {
+  content: "";
 }
 .card-hover {
   position:absolute;
@@ -87,7 +80,12 @@ a {
   opacity: 0;
   transition: 0.4s;
 }
+.poster {
+  z-index:40;
+  transition:0.5s transform;
+}
 .poster:hover {
+  z-index:80;
   transform: scale(1.2);
   border: 2px solid white;
 }

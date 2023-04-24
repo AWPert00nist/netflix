@@ -9,6 +9,7 @@ import Popular from "../components/Popular";
 import { useDispatch } from "react-redux";
 import { getGenres, setGenresMovieList } from "../Store/movieSlice";
 import Loader from "../components/Loader";
+
 const Movies = () => {
     const genresMovieList =useSelector(state => state.movie.genresMovieList);
     const sliderContentLoading =useSelector(state => state.movie.sliderContentLoading);

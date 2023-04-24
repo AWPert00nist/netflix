@@ -3,7 +3,6 @@ import { getMovieTrailers, getTvTrailers, setTrailerSelected } from "../Store/mo
 import { memo, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getImage, getName, getOverView } from "../utils/constants";
-import LazyLoad from "react-lazy-load";
 
 const Poster = ({data,datatype}) => {
     const [trailers,setTrailers] =useState(null);
@@ -26,14 +25,13 @@ const Poster = ({data,datatype}) => {
         }
     },[])
     return ( 
-        <div className='poster relative w-[250px] h-[350px] max-[500px]:w-[200px] max-[500px]:h-[300px] transition-[0.7s]'>
-            <LazyLoad offset={400}>
-                <img 
-                className='object-cover w-[250px] h-[350px] max-[500px]:w-[200px] max-[500px]:h-[300px]'
-                src={`https://image.tmdb.org/t/p/original/${data?getImage(data,'poster'):null}`}  
-                alt=''
-                />
-            </LazyLoad>
+        <div className='poster relative w-[250px] h-[350px] max-[500px]:w-[200px] max-[500px]:h-[300px]'>
+            <img 
+            loading="lazy"
+            className='object-cover w-full h-full'
+            src={`https://image.tmdb.org/t/p/original/${data?getImage(data,'poster'):null}`}  
+            alt=''
+            />
             <div className='overlay'></div>
             <div className="content select-none z-[50] w-full px-[15px] flex flex-col gap-[10px] absolute top-[50%] translate-y-[-50%] transition-[0.7s]">
                 <h1 className="text-[20px] text-white">

@@ -25,7 +25,7 @@ const SignUpForm = () => {
     const [isPasswordVisible, setPasswordVisible] = useState(false);
     const handleTogglePasswordVisibility = () => {
         setPasswordVisible(!isPasswordVisible);
-    }
+    }   
     return ( 
         <form 
         className={`flex items-center ${isClicked?'flex-col':null} max-[650px]:flex-col gap-3`}
