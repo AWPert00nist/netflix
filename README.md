@@ -3,7 +3,7 @@
 ## 📌 Live Demo
 https://netflix-clone-react-iv5k.onrender.com/
 
-## 😎 Features?
+## 😎 Features
 
 - It is a clone of YouTube.
 - UI almost similar to Netflix
@@ -25,7 +25,7 @@ From your command line, first clone this repo:
 
 ```
 # Clone this repository
-$ https://github.com/0mar-helal/youtube-clone-react.git
+$ https://github.com/0mar-helal/netflix-clone-react.git
 
 # Go into the repository
 $ cd youtube-clone-react
