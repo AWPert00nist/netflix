@@ -28,7 +28,7 @@ From your command line, first clone this repo:
 $ https://github.com/0mar-helal/netflix-clone-react.git
 
 # Go into the repository
-$ cd youtube-clone-react
+$ cd netflix-clone-react
 
 # Remove current origin repository
 $ git remote remove origin
