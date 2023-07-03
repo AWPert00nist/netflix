@@ -5,7 +5,7 @@ https://netflix-clone-react-iv5k.onrender.com/
 
 ## 😎 Features
 
-- It is a clone of YouTube.
+- It is a clone of Netflix.
 - UI almost similar to Netflix
 - Fully responsive and mobile friendly
 - User can view movie/series info and trailer if available
