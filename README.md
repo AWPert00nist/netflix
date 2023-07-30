@@ -1,4 +1,5 @@
 # Netflix 
+netflix-shivam.vercel.app
 
 ******Features******
 
@@ -10,8 +11,7 @@
 **Tech Stack**
 
 - **react.js (create-react-app)**
--** react-dom-router**
-**- axios**
+- axios
 - **tailwindcss**
 - **Material-UI**
 - **state management using Redux**
@@ -23,5 +23,5 @@ $ npm install
 # Start development server
 $ npm start**
 ```
-👨‍💻 Show Me YOUR CODE!!
+ Show Me YOUR CODE!!
 ---
